@@ -1,0 +1,115 @@
+<html>
+<head>
+<style type="text/css">
+* {padding:0;
+	margin:0;}
+body {font-family:Arial, Helvetica, sans-serif;}
+
+.tumu {width:600px; margin:0 auto;}
+
+.tumbslk {margin:30px 0 10px 0; font-size:14px;font-family:segoe print; }
+.anabslk {font-size:24px;}
+
+.menu {}
+.menu ul li {display:inline; list-style:none; margin:0 5px 0 0;}
+.menu ul li a { text-decoration:none;color:#fff; background:#000; padding:4px 10px 3px; font-size:13px;}
+
+.uploadform {width:240px;
+			margin:0;
+			background:#fff;
+			padding:10px;
+			text-align: left;
+			float:left;}
+.orta {width:600px;
+		overflow:auto;
+		padding:20px 0 20px 0;
+		margin : 3px 0 10px;
+		border-top : 2px solid #000;
+		border-bottom : 2px solid #000;}
+.sag {float:right;
+	  width:260px;
+	  font-size:13px;
+	  font-family:segoe print;}
+
+.alt {width:600px; overflow:auto; margin:15px 0;}
+.altextra1 {width:160px; float:left; margin:0 30px 0 0; border: 1px solid orange; height:120px;}
+.altextra2 {width:170px; float:left; margin:0 30px 0 0; border: 1px solid orange; height:120px;}
+.altextra3 {width:180px; float:right; margin:0; border: 1px solid orange; height:120px;}
+
+.bslk {font-size:17px;
+		margin:0 0 20px 0;}
+
+.formdiv input {font-size:12px; }
+.fsubmit {margin:10px 0 0 0;}
+.fsubmit input {font-size:12px; padding:2px 0; margin:10px 0 0 0;}
+
+.enalt {text-align: center; border-top: 2px solid #000; padding:10px 0;}
+.enalt a { margin:0 5px; font-size:11px; color:#000;}
+
+.sagtxt {padding:4px 0 15px 0; text-align:center;}
+.fb-like {margin:10px 0; }
+
+.alt span {margin:0 8px 0 0;}
+
+.myimages {padding: 20px 0 0 0 ;
+			width:600px;
+			overflow:auto;
+			text-align: center;
+			border-top:2px solid #000;
+			margin:3px 0 0 0;}
+.each_image {margin:0 10px 10px 0;
+			 width:290px;
+			 float:left;}
+.each_image img {border:1px solid #000;}
+.pagination {width:500px; text-align: center; padding: 15px 0; font-size:12px;}
+
+.uwbslk {font-size:18px; margin:20px 0 0 10px;}
+.uwbslk span{border-bottom:2px solid #000; padding:2px 10px 2px 0;}
+.uworks {padding:10px 10px 10px 10px; font-size:13px; margin:0 0 10px;}
+.uworksd {margin:10px 0;}
+.uworksd div {margin:5px 0 0 0;}
+.sbmt {margin:0 0 0; font-size:13px;}
+.sbmt input {padding:2px 5px;}
+</style>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="tumu">
+	<div class="tumbslk">
+		<div class="anabslk">Mad Images ~</div>
+		Form your image library
+	</div>
+	<div class="menu">
+		<ul>
+			<li><a href="/">home</a></li>
+			{% if user.is_authenticated %}
+			<li><a href="/my-images/">my images</a></li>
+			<li><a href="/logout/">logout</a></li>
+			{% else %}
+			<li><a href="/register/">register</a></li>
+			<li><a href="/login/">login</a></li>
+			{% endif %}
+		</ul>
+	</div>
+
+	{% block icrk %}
+
+	{% endblock %}
+	
+	<div class="enalt">
+		<a href="">about us</a> <a href="">terms of service</a> <a href="">other</a>
+	</div>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends "imgbase.html" %}
+
+{% block icrk %}
+
+<div class="myimages">
+
+	{% for item in images.object_list %}
+		<div class="each_image">
+			<a href="{{STATIC_URL}}{{item}}">
+				<img src="{{STATIC_URL}}{{item}}" width="180" />
+			</a>
+		</div>
+	{% endfor %}
+	
+</div>
+
+<div class="pagination">
+	{% if images.has_previous %}
+		<a href="?page={{images.previous_page_number}}"> << </a>
+	{% endif %}
+	{{ images.number }}
+	{% if images.has_next %}
+		<a href="?page={{images.next_page_number}}"> >> </a>
+	{% endif %}
+</div>
+
+{% endblock %}

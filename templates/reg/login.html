@@ -1,0 +1,20 @@
+{% extends "imgbase.html" %}
+
+{% block icrk %}
+<div class="uwbslk">
+	<span>Login</span>
+</div>
+<div class="uworks">
+	<form action="/login/" method="POST">{% csrf_token %}
+	{% for item in form %}
+		<div class="uworksd">
+			<div>{{item.label}}</div>
+			<div>{{item}}</div>
+		</div>
+	{% endfor %}
+		<div class="sbmt">
+			<input type="submit" value="login" />
+		</div>
+	</form>
+</div>
+{% endblock %}

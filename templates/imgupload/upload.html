@@ -1,0 +1,48 @@
+{% extends "imgbase.html" %}
+
+{% block icrk %}
+<div class="orta">
+
+	<div class="uploadform">
+
+			<div class="bslk">
+				Upload an image
+			</div>
+			<div>
+				<form action="/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+					{% for e in form %}
+						<div class="formdiv">
+								<span class="item">{{e}}</span>
+						</div>
+					{% endfor %}
+					<div class="fsubmit">
+						<input type="submit" value="Upload" />
+					</div>
+				</form>
+			</div>
+
+	</div>
+	
+	<div class="sag">
+		<div class="sagtxt">
+			Make your account, upload your photos, share them with your friends !
+		</div>
+		<div class="sagtxt">
+			Create your photo album for free, enjoy browsing your photos.
+		</div>
+	</div>
+	
+</div>
+
+<div class="alt">
+
+	<span><img src="{{STATIC_URL}}1 (Custom).jpg" width="90" /></span>
+	<span><img src="{{STATIC_URL}}2 (Custom).jpg" width="90" /></span>
+	<span><img src="{{STATIC_URL}}3 (Custom).jpg" width="90" /></span>
+	<span><img src="{{STATIC_URL}}4 (Custom).jpg" width="90" /></span>
+	<span><img src="{{STATIC_URL}}5 (Custom).jpg" width="90" /></span>
+	<img src="{{STATIC_URL}}6 (Custom).jpg" width="90" />
+
+</div>
+
+{% endblock %}
